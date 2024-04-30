@@ -1,14 +1,18 @@
 # Proyecto python djando
 
-Comision:
+Comision:54135
 
-Alumnno:
+Alumnno: Sergio Felipe Obando Mejía
 
 ## Acerca del proyecto
+Página de educación basada en competencias con una tienda de productos
 
 ## Aplicaciones
-
+App
+tienda
+core
 ## Modelos
+Curso,Estudiante,Comision,Profesor,ProductoCategoria
 
 ## Mejoras futuras
 
