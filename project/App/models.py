@@ -30,4 +30,4 @@ class Comision(models.Model):
     estudiante = models.ManyToManyField(Estudiante)
 
     def __str__(self) -> str:
-        return str(self.nombre)
+        return f"{self.nombre}, {self.curso}"

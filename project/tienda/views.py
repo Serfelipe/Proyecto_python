@@ -1,25 +1,88 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
+from django.db.models.query import QuerySet
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
 
 from . import forms, models
 
 
 def home(request):
-    consulta = request.GET.get("consulta", None)
-    if consulta:
-        print(consulta)
-        query = models.ProductoCategoria.objects.filter(nombre__icontains=consulta)
-    else:
-        query = models.ProductoCategoria.objects.all()
-    context = {"productos": query}
-    return render(request, "producto/index.html", context)
+    return render(request, "producto/index.html")
+
+class TiendaCategoriaList(ListView):
+    model = models.TiendaCategoria
+
+    def get_queryset(self) -> QuerySet:
+            if self.request.GET.get("consulta"):
+                consulta = self.request.GET.get("consulta")
+                object_list = models.TiendaCategoria.objects.filter(nombre__icontains=consulta)
+            else:
+                object_list = models.TiendaCategoria.objects.all()
+            return object_list
+    
+
+class TiendaCategoriaCreate(CreateView):
+    model = models.TiendaCategoria
+    form_class = forms.TiendaCategoriaForm
+    success_url = reverse_lazy("producto:home")
 
 
-def productocategoria_create(request):
-    if request.method == "POST":
-        form = forms.ProductoCategoriaForm(request.POST)
-        if form.is_valid:
-            form.save()
-            return redirect("producto:home")
-    else:  # request.method == "GET"
-        form = forms.ProductoCategoriaForm()
-    return render(request, "producto/productocategoria_create.html", context={"form": form})
+class TiendaCategoriaUpdate(UpdateView):
+    model = models.TiendaCategoria
+    form_class = forms.TiendaCategoriaForm
+    success_url = reverse_lazy("producto:productocategoria_list")
+
+
+class TiendaCategoriaDetail(DetailView):
+    model = models.TiendaCategoria
+
+
+class TiendaCategoriaDelete(LoginRequiredMixin, DeleteView):
+    model = models.TiendaCategoria
+    # template_name = "producto/productocategoria_delete.html"
+    success_url = reverse_lazy("producto:productocategoria_list")
+
+
+class ArticuloList(ListView):
+    model = models.Articulo
+
+    def get_queryset(self) -> QuerySet:
+        if self.request.GET.get("consulta"):
+            consulta = self.request.GET.get("consulta")
+            object_list = models.Articulo.objects.filter(nombre__icontains=consulta)
+        else:
+            object_list = models.Articulo.objects.all()
+        return object_list
+
+
+class ArticuloCreate(CreateView):
+    model = models.Articulo
+    form_class = forms.ArticuloForm
+    success_url = reverse_lazy("producto:home")
+
+
+class ArticuloUpdate(UpdateView):
+    model = models.Articulo
+    form_class = forms.ArticuloForm
+    success_url = reverse_lazy("producto:producto_list")
+
+
+class ArticuloDetail(DetailView):
+    model = models.Articulo
+
+
+class ArticuloDelete(LoginRequiredMixin, DeleteView):
+    model = models.Articulo
+    success_url = reverse_lazy("producto:producto_list")
+
+
+
+

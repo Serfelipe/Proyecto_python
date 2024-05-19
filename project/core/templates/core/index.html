@@ -1,14 +1,14 @@
 {% extends 'core/base.html' %}
+{% load static %}
+{% block titulo %}
+    <h1>Página inicial</h1>
+{% endblock titulo %}
 
-{% block title %}
-        <h1>Página inicial</h1>
-    {% endblock title %}}
+{% block contenido %}
 
-    {% block content %}
-        <ul>
-            <li>
-                <a href="{% url 'App:home' %}">App</a>
-            </li>
-
-        </ul>
-    {% endblock content %}
+    {% if user.is_authenticated %}
+    {{ mensaje }}
+    <p class="fs-2"> Hola {{ user.username }}</p>
+    {% endif %}
+    
+{% endblock contenido %}

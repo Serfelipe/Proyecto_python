@@ -1,17 +1,26 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Categoría de Productos: Creación
+    Producto: 
+    {% if form.instance.pk %}
+        Editar
+    {% else %}
+        Crear
+    {% endif %}
+    Productos
 {% endblock titulo %}
 
 {% block contenido %}
     
-    <form action="" method="post">
+    <form method="post">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
+    <div class="fs-3 pb-4">
+        <a href="{% url 'articulo:home' %}">Volver al inicio de Producto</a>
+    </div>
 
 {% endblock contenido %}
