@@ -1,7 +1,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="#page-top">EDUCACION BASADA EN COMPETENCIAS </a>
+        <a class="navbar-brand" href="#page-top">EDUCACIÓN BASADA EN COMPETENCIAS </a>
         <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -9,10 +9,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/" %} active {% endif %}" aria-current="page" href="{% url 'core:home' %}">Inicio</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Cursos</a></li>
                 {% if user.is_authenticated %}
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/App/" %} active {% endif %}" href="#about">Tienda</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contacto</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/app/" %} active {% endif %}" aria-current="page" href="{% url 'App:home' %}">Cursos</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/tienda/" %} active {% endif %}" href="{% url 'tienda:home' %}">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link text-bg-info">{{ user.username }}</a></li>
+                    <li class="nav-item">
+                        <form action="{% url 'core:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-dark {{ fontsize }} ">Logout</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/login/" %} active {% endif %}" href="{% url 'core:login' %}">Login</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/register/" %} active {% endif %}" href="{% url 'core:register' %}">Registrarse</a></li>
+                {% endif %}
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/contacto/" %} active {% endif %}" aria-current="page" href="{% url 'core:contacto' %}">Contacto</a></li>
             </ul>
         </div>
     </div>

@@ -12,7 +12,7 @@ App
 tienda
 core
 ## Modelos
-Curso,Estudiante,Comision,Profesor,ProductoCategoria
+Curso,Estudiante,Comision,Profesor,TiendaCategoria
 
 ## Mejoras futuras
 

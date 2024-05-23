@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <style>
+        body{
+        background-color: #31a84f;
+    }
+    </style>
+    
+    
+</head>
+
+<body>
+    <!-- Ir a elementos que no están en la misma carpeta -->
+    <a href="{% url 'core:home' %}">INICIO</a>
+    
+
+    <div class="container" id="formulario">
+        <div class="titulo-formulario">
+
+            <div class="center">
+                <h2>Contacto</h2>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nombre y Apellido</label><br>
+                <input type="text" class="form-control" id="nombre" placeholder="Andrés Castañeda" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Celular</label><br>
+                <input type="number" class="form-control" id="celular" placeholder="311-111-11-11">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label><br>
+                <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Detalle de tu solicitud</label><br>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribe aquí"></textarea>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Autorizo tratamiento de datos personales</label>
+            </div>
+
+            <div class="mb-3">
+                <button type="button" class="btn-btn-primary">Enviar</button>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

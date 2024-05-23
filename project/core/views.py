@@ -11,6 +11,8 @@ from .forms import CustomAuthenticationForm, CustomUserCreationForm
 def home(request):
     return render(request, "core/index.html")
 
+def contacto(request):
+    return render(request, "core/contacto.html")
 
 class CustomLoginView(LoginView):
     authentication_form = CustomAuthenticationForm
@@ -27,3 +29,6 @@ def register(request: HttpRequest) -> HttpResponse:
     else:
         form = CustomUserCreationForm()
     return render(request, "core/register.html", {"form": form})
+
+
+

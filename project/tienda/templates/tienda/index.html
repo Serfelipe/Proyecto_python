@@ -1,21 +1,24 @@
 {% extends 'core/base.html' %}
 {% block titulo %}
-    Productos
+    App Tienda
 {% endblock titulo %}
 {% block contenido %}
+<div class="container my-5">
+    <h3 class="pb-3 border-bottom">Categoría de tienda</h3>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
+        <a class="btn btn-primary me-md-2" href="{% url 'tienda:tiendacategoria_create' %}" role="button">Crear Categorías tienda</a>
+        <a class="btn btn-outline-primary" href="{% url 'tienda:tiendacategoria_list' %}" role="button">Listar Categorías tienda</a>
+    </div>
 
-    <div class="fs-3 pb-4">
-        <a href="{% url 'producto:productocategoria_create' %}">Crear Categorías de Productos</a>
+    <h3 class="pb-3 border-bottom">Tienda</h3>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
+        <a class="btn btn-success me-md-2" href="{% url 'tienda:articulo_create' %}" role="button">Crear Articulos</a>
+        <a class="btn btn-outline-success" href="{% url 'tienda:articulo_list' %}" role="button">Listar Articulos</a>
     </div>
-    <div class="py-lg-4 ">
-        <form action="{% url 'producto:home' %}" method="get">
-            <input type="text" name="consulta" placeholder="Buscar...">
-        </form>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
+        <a class="btn btn-secondary" href="{% url 'core:home' %}" role="button">Volver a Inicio</a>
     </div>
-    <ul>
-        {% for producto in productos %}<li>{{ producto }}</li>{% endfor %}
-    </ul>
-    {% comment  %}
-        <a href="{% url 'core:home' %}">Ir a home</a>
-    {% endcomment %}
+</div>
+
 {% endblock contenido %}

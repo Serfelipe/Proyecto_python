@@ -15,7 +15,7 @@ from . import forms, models
 
 
 def home(request):
-    return render(request, "producto/index.html")
+    return render(request, "tienda/index.html")
 
 class TiendaCategoriaList(ListView):
     model = models.TiendaCategoria
@@ -32,13 +32,13 @@ class TiendaCategoriaList(ListView):
 class TiendaCategoriaCreate(CreateView):
     model = models.TiendaCategoria
     form_class = forms.TiendaCategoriaForm
-    success_url = reverse_lazy("producto:home")
+    success_url = reverse_lazy("tienda:home")
 
 
 class TiendaCategoriaUpdate(UpdateView):
     model = models.TiendaCategoria
     form_class = forms.TiendaCategoriaForm
-    success_url = reverse_lazy("producto:productocategoria_list")
+    success_url = reverse_lazy("tienda:articulocategoria_list")
 
 
 class TiendaCategoriaDetail(DetailView):
@@ -48,7 +48,7 @@ class TiendaCategoriaDetail(DetailView):
 class TiendaCategoriaDelete(LoginRequiredMixin, DeleteView):
     model = models.TiendaCategoria
     # template_name = "producto/productocategoria_delete.html"
-    success_url = reverse_lazy("producto:productocategoria_list")
+    success_url = reverse_lazy("tienda:articulocategoria_list")
 
 
 class ArticuloList(ListView):
@@ -66,13 +66,13 @@ class ArticuloList(ListView):
 class ArticuloCreate(CreateView):
     model = models.Articulo
     form_class = forms.ArticuloForm
-    success_url = reverse_lazy("producto:home")
+    success_url = reverse_lazy("tienda:home")
 
 
 class ArticuloUpdate(UpdateView):
     model = models.Articulo
     form_class = forms.ArticuloForm
-    success_url = reverse_lazy("producto:producto_list")
+    success_url = reverse_lazy("tienda:articulo_list")
 
 
 class ArticuloDetail(DetailView):
@@ -81,7 +81,7 @@ class ArticuloDetail(DetailView):
 
 class ArticuloDelete(LoginRequiredMixin, DeleteView):
     model = models.Articulo
-    success_url = reverse_lazy("producto:producto_list")
+    success_url = reverse_lazy("tienda:articulo_list")
 
 
 
