@@ -6,7 +6,7 @@
     <div class="container my-5">
         <div class="py-4">
             <form class="input-group mb-3"
-                  action="{% url 'tienda:articulo_list' %}"
+                  action="{% url 'producto:producto_list' %}"
                   method="get">
                 <input type="text"
                        class="form-control"
@@ -29,11 +29,11 @@
                         <td>{{ producto.nombre }}</td>
                         <td>
                             <a class="btn btn-info btn-sm me-1"
-                               href="{% url 'tienda:articulo_detail' producto.id %}">Detalle</a>
+                               href="{% url 'producto:producto_detail' producto.id %}">Detalle</a>
                             <a class="btn btn-warning btn-sm me-1"
-                               href="{% url 'tienda:articulo_update' producto.id %}">Cambiar</a>
+                               href="{% url 'producto:producto_update' producto.id %}">Cambiar</a>
                             <a class="btn btn-danger btn-sm"
-                               href="{% url 'tienda:articulo_delete' producto.id %}">Borrar</a>
+                               href="{% url 'producto:producto_delete' producto.id %}">Borrar</a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -41,7 +41,7 @@
         </table>
         <div class="mt-4">
             <a class="btn btn-secondary"
-               href="{% url 'tienda:home' %}"
+               href="{% url 'producto:home' %}"
                role="button">Volver al inicio de Producto</a>
         </div>
     </div>

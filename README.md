@@ -9,10 +9,10 @@ Página de educación basada en competencias con una tienda de productos
 
 ## Aplicaciones
 App
-tienda
+producto
 core
 ## Modelos
-Curso,Estudiante,Comision,Profesor,TiendaCategoria
+Curso,Estudiante,Comision,Profesor,ProductoCategoria
 
 ## Mejoras futuras
 

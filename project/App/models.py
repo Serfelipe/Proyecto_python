@@ -7,6 +7,9 @@ class Curso(models.Model):
 
     def __str__(self) -> str:
         return self.nombre
+    
+    class Meta:
+        verbose_name_plural = "cursos"
 
 
 class Estudiante(models.Model):
@@ -31,3 +34,7 @@ class Comision(models.Model):
 
     def __str__(self) -> str:
         return f"{self.nombre}, {self.curso}"
+    
+
+
+

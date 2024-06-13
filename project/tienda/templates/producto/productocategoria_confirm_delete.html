@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Productos: Borrar una Categoría de Articulos
+    Productos: Borrar una Categoría de Productos
 {% endblock titulo %}
 
 {% block contenido %}
@@ -13,7 +13,7 @@
         <button type="submit" class="btn btn-danger">Confirmar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:home' %}">Volver al inicio de Producto</a>
+        <a href="{% url 'producto:home' %}">Volver al inicio de Producto</a>
     </div>
 
 {% endblock contenido %}

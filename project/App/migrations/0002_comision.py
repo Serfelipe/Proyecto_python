@@ -11,13 +11,37 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
+        migrations.AlterModelOptions(
             name='Comision',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nombre', models.CharField(max_length=200)),
-                ('estudiante', models.ManyToManyField(to='App.estudiante')),
-                ('profesor', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='App.profesor')),
-            ],
+            options={'verbose_name_plural': 'comisiones'},
         ),
-    ]
+        migrations.AlterField(
+            model_name='App',
+            name='curso',
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='App.curso', verbose_name='curso'),
+        ),
+
+        migrations.AlterField(
+            model_name='nombre',
+            name='estudiante',
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='nombre.estudiante', verbose_name='estudiandte'),
+        ),
+
+        
+        migrations.AlterField(
+            model_name='nombre',
+            name='profesor',
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='nombre.profesor', verbose_name='profesor'),
+        ),
+
+ ]
+
+            # fields=[
+            #     ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+            #     ('nombre', models.CharField(max_length=200)),
+            #     ('estudiante', models.ManyToManyField(to='App.estudiante')),
+            #     ('profesor', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='App.profesor')),
+            # ],
+        
+   
+

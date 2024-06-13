@@ -6,7 +6,7 @@
 {% block contenido %}
 
     <div class="py-lg-4 ">
-        <form action="{% url 'tienda:articulocategoria_list' %}" method="get">
+        <form action="{% url 'producto:productocategoria_list' %}" method="get">
             <input type="text" name="consulta" placeholder="Buscar...">
         </form>
     </div>
@@ -17,15 +17,15 @@
 
         {% for producto in object_list %}
             <li>{{ producto.nombre }}
-                <a href="{% url 'tienda:articulocategoria_detail' producto.id %}">Detalle</a>
-                <a href="{% url 'tienda:articulocategoria_update' producto.id %}">Cambiar</a>
-                <a href="{% url 'tienda:articulocategoria_delete' producto.id %}">Borrar</a>
+                <a href="{% url 'producto:productocategoria_detail' producto.id %}">Detalle</a>
+                <a href="{% url 'producto:productocategoria_update' producto.id %}">Cambiar</a>
+                <a href="{% url 'producto:productocategoria_delete' producto.id %}">Borrar</a>
             </li>
         {% endfor %}
     </ul>
 
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:home' %}">Volver al inicio de Producto</a>
+        <a href="{% url 'producto:home' %}">Volver al inicio de Producto</a>
     </div>
 
 {% endblock contenido %}

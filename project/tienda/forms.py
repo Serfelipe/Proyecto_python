@@ -7,9 +7,9 @@ from . import models
 #     descripcion = forms.CharField()
 
 
-class TiendaCategoriaForm(forms.ModelForm):
+class ProductoCategoriaForm(forms.ModelForm):
     class Meta:
-        model = models.TiendaCategoria
+        model = models.ProductoCategoria
         fields = "__all__"
         widgets = {
             "nombre": forms.TextInput(attrs={"class": "form-control"}),
@@ -17,9 +17,9 @@ class TiendaCategoriaForm(forms.ModelForm):
         }
 
 
-class ArticuloForm(forms.ModelForm):
+class ProductoForm(forms.ModelForm):
     class Meta:
-        model = models.Articulo
+        model = models.Producto
         fields = "__all__"
         widgets = {
             "nombre": forms.TextInput(attrs={"class": "form-control"}),

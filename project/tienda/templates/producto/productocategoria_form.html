@@ -1,7 +1,13 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Productos: Cambiar una Categoría de Artículos
+    Producto: 
+    {% if form.instance.pk %}
+        Editar
+    {% else %}
+        Crear
+    {% endif %}
+    Categoría de Productos
 {% endblock titulo %}
 
 {% block contenido %}
@@ -14,7 +20,7 @@
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:articulocategoria_list' %}">Volver</a>
+        <a href="{% url 'producto:home' %}">Volver al inicio de Producto</a>
     </div>
 
 {% endblock contenido %}
