@@ -21,9 +21,10 @@
                     </li>
                 {% else %}
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/login/" %} active {% endif %}" href="{% url 'core:login' %}">Login</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/register/" %} active {% endif %}" href="{% url 'core:register' %}">Registrarse</a></li>
-                {% endif %}
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/contacto/" %} active {% endif %}" aria-current="page" href="{% url 'core:contacto' %}">Contacto</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/register/" %} active {% endif %}" aria-current="page" href="{% url 'core:register' %}">Registrarse</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/contacto/" %} active {% endif %}" aria-current="page" href="{% url 'core:contacto' %}">Contacto</a></li>
+                    {% endif %}
+                
             </ul>
         </div>
     </div>
