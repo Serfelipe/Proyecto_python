@@ -8,7 +8,7 @@ Alumnno: Sergio Felipe Obando Mejía
 Página de educación basada en competencias con una tienda de productos
 
 ## Aplicaciones
-App
+cliente
 producto
 core
 ## Modelos
