@@ -8,5 +8,6 @@
         "**/Thumbs.db": true,
         "**/__pycache__": true
     },
-    "explorerExclude.backup": {}
+    "explorerExclude.backup": {},
+    "python.pythonPath": "C:/Users/pipev/Proyecto_python/project/manage.py"
 }

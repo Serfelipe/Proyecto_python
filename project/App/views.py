@@ -4,8 +4,8 @@ from . import models
 
 def home(request):
     query = models.Comision.objects.all()
-    context = {'clientes':query}
-    return render(request, 'cliente/index.html', context)
+    context = {'App':query}
+    return render(request, 'App/index.html', context)
 
 
 from django.shortcuts import render

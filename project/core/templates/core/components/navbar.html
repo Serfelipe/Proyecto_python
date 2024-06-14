@@ -10,7 +10,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/" %} active {% endif %}" aria-current="page" href="{% url 'core:home' %}">Inicio</a></li>
                 {% if user.is_authenticated %}
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/cliente/" %} active {% endif %}" aria-current="page" href="{% url 'cliente:home' %}">Cursos</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/App/" %} active {% endif %}" aria-current="page" href="{% url 'App:home' %}">Cursos</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded {% if request.path == "/producto/" %} active {% endif %}" href="{% url 'producto:home' %}">Tienda</a></li>
                     <li class="nav-item"><a class="nav-link text-bg-info">{{ user.username }}</a></li>
                     <li class="nav-item">
